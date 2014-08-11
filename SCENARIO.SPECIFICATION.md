@@ -1,14 +1,14 @@
-# Hugann Scenario Package Specification
+# Huginn Scenario Package Specification
 Draft 0.1
 
-This is a proposed Hugann scenario specification for discussion and improvement by the community.
+This is a proposed Huginn scenario specification for discussion and improvement by the community.
 
 ## Design Considerations
 
 - **Security**: The origin of the package must be verifiable
-- **Portability**: The package must be able to be built and extracted on all platforms that support Hugann
+- **Portability**: The package must be able to be built and extracted on all platforms that support Huginn
 - **Usability**: It must be easy to create and install packages
-- **Extensible**: It must be able to reasonable support Hugann into the future and be easily versioned to support minimum system requirements
+- **Extensible**: It must be able to reasonable support Huginn into the future and be easily versioned to support minimum system requirements
 
 ## Scenario Package Format
 
@@ -31,7 +31,7 @@ name | string | The name of the scenario
 description | string | A short description for the scenario - longer descriptions belong in README.md
 version | string | A version number for the scenario in the format of major.minor.build - Example 1.0.10
 requirements | object | Requirements to use the scenario
-requirements.hugann_version | string | The required version of Hugann
+requirements.Huginn_version | string | The required version of Huginn
 requirements.gems | object | A object containing key/value pairs where the key is the Gem name and the value is the version requirements
 requirements.supported_os | array | An array of supported operating systems with wildcards allowed - `[ "*" ]` for all operating systems
 requirements.executables | object | An an object containing key/value pairs for required executables where the key is the executable name and the value is the version - the implementation may be operating system specific
@@ -82,7 +82,7 @@ signature | byte[] | size of signature | | The signature of the ZIP content usin
     2. Otherwise display a stern warning
 4. File is unzipped in memory
 5. Manifest is read
-6. The required version of Hugann is verified
+6. The required version of Huginn is verified
     1. Proceed if the version is sufficient
     2. Otherwise halt installation
 7. The required operating system is verified
@@ -100,7 +100,7 @@ signature | byte[] | size of signature | | The signature of the ZIP content usin
 
 #### Upgrading a scenario
 
-1. Hugann checks for scenario updates every 24 hours
+1. Huginn checks for scenario updates every 24 hours
 2. The user is prompted with updates to install and presented with change logs
 3. The new package is downloaded
 4. The signature is verified and checked against the public key from the original install
@@ -147,5 +147,5 @@ Examples:
 ## References
 
 Google Chromium CRX Format Specification - https://developer.chrome.com/extensions/crx
-About CRX files - http://www.lyraphase.com/wp/projects/software/about-crx-files/
 
+About CRX files - http://www.lyraphase.com/wp/projects/software/about-crx-files/
